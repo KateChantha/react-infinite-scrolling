@@ -14,6 +14,12 @@ export default function useBookSearch(query, pageNumber) {
   const [books, setBooks] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
+  // reset book state back to [] every time when make a new query
+  useEffect(() => {
+    setBooks([])
+  }, [query])
+
+
   // call API everytime that query or pageNumber has changed
   // this API comes with builtin page
   useEffect(() => {
