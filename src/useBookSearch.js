@@ -42,7 +42,7 @@ export default function useBookSearch(query, pageNumber) {
         return [...new Set([...prevBooks, ...res.data.docs.map(b => b.title)])];
       })
 
-      // check if there is no more books to be load, if greater than 0 means we have no more data, so we knows that we don't need to make this query again
+      // check if there is more book to be loaded
       setHasMore(res.data.docs.length > 0)
       // at the end of fething data, reset loading
       setLoading(false);
